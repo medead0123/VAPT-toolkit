@@ -1,0 +1,19 @@
+# VAPT Toolkit configuration
+target:
+  url: "http://localhost:3000"       # OWASP Juice Shop (default docker port)
+  name: "OWASP Juice Shop (Lab Target)"
+
+scan:
+  ports: "1-1000"                    # nmap port range
+  timeout_seconds: 10
+  use_nmap: true                     # falls back to socket scan if nmap binary not found
+  use_zap: false                     # set true once ZAP daemon is running with API enabled
+  zap_api_url: "http://localhost:8080"
+  zap_api_key: ""                    # set this if your ZAP instance requires a key
+
+report:
+  author: "Your Name"
+  organization: "Independent Security Assessment"
+  engagement_name: "Web Application Penetration Test - OWASP Juice Shop"
+  output_dir: "reports"
+  findings_file: "findings/findings.json"

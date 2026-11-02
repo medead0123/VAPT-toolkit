@@ -1,0 +1,10 @@
+python -m venv venv
+venv\Scripts\activate                     Create the Python environment
+
+pip install -r requirements.txt           Install the required packages
+
+docker compose up -d                      Start the vulnerable test app (Juice Shop)
+
+python -m vapt.cli scan                   Run the scan
+
+python -m vapt.cli report                 Generate the PDF report
